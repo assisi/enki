@@ -16,7 +16,7 @@ A Qt signal is emitted every time a ZMQ message comes in.
 
 A better (more modular) approach would be to integrate ZMQ into Enki::World. My current idea
 is to do all communication (read all incoming messages, and publish all sensor data) on each
-World::step. This way, we could have "headless" simulations controlled through ZMQ. Have to check if this makes sense. It would probably require the decoupling of World::step from GLupdate in the GUI (they seem to be coupled now, see ../viwer/Viewer.cpp)
+World::step. This way, we could have "headless" simulations controlled through ZMQ. Have to check if this makes sense. It would probably require the decoupling of World::step from GLupdate in the GUI (they seem to be coupled now, see ../viewer/Viewer.cpp)
 
 Update to Qt5
 
