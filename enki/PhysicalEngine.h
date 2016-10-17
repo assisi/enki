@@ -281,7 +281,7 @@ namespace Enki
 		double r;
 		//! The height of circular object or, if hull is not empty, the maximum height
 		double height;
-		//! The overall color of this object, if hull is empyt or if it does not contain any texture
+		//! The overall color of this object, if hull is empty or if it does not contain any texture
 		Color color;
 		
 	public:			// methods
@@ -312,6 +312,15 @@ namespace Enki
 		void setCustomHull(const Hull& hull, double mass);
 		//! Set the overall color of this object, if hull is empty or if it does not contain any texture
 		void setColor(const Color &color);
+
+		enum ButtonCode
+		{
+			LEFT_MOUSE_BUTTON = 1<<0,
+			RIGHT_MOUSE_BUTTON = 1<<1,
+			MIDDLE_MOUSE_BUTTON = 1<<3
+		};
+		//! called for robot if a click is performed on it
+		virtual void clickedInteraction(bool pressed, unsigned int buttonCode, double pointX, double pointY, double pointZ){};
 		
 	private:		// setup methods
 		
